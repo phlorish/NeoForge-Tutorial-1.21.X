@@ -1,4 +1,4 @@
-package net.phlorish.tutorial1211;
+package net.phlorish.tutorialmod;
 
 import java.util.List;
 
