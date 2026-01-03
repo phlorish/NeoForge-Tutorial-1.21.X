@@ -1,5 +1,6 @@
 package net.phlorish.tutorialmod;
 
+import net.phlorish.tutorialmod.blocks.ModBlocks;
 import net.phlorish.tutorialmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -39,6 +40,7 @@ public class TutorialMod {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
@@ -55,6 +57,12 @@ public class TutorialMod {
         {
             event.accept(ModItems.BISMUTH);
             event.accept(ModItems.RAW_BISMUTH);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
+        {
+            event.accept(ModBlocks.BISMUTH_BLOCK);
+            event.accept(ModBlocks.BISMUTH_ORE);
         }
     }
 
